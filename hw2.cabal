@@ -1,0 +1,52 @@
+name:                hw2
+version:             0.1.0.0
+synopsis:            Synopsis for task 2
+description:         Task 2 for FP ITMO course
+
+homepage:            https://github.com/vadzimko/fp-homework/tree/master/hw2#readme
+license:             MIT
+license-file:        LICENSE
+author:              Vadim Badyaev
+maintainer:          vvadzimko@gmail.com
+copyright:           2020 Vadim Badyaev
+
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+tested-with:         GHC == 8.0.1
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Lib
+                     , Structures
+                     , PrintUtils
+                     , Commands
+                     , CommandsImpl
+                     , Parser
+                     , VCS
+  ghc-options:         -Wall
+  build-depends:       base >= 4.9 && < 5
+                     , directory
+                     , ansi-terminal
+                     , time
+                     , bytestring
+                     , system-filepath
+                     , utf8-string
+                     , hashmap
+                     , containers
+                     , transformers
+                     , split
+                     , pretty-show
+                     , monad-extras
+  default-language:    Haskell2010
+
+executable hw2
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -Wall -Werror -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , hw2
+                     , transformers
+
+  default-language:    Haskell2010
